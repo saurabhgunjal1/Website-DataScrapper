@@ -16,6 +16,16 @@ export default function Calculator() {
     }
 
     const calculateResult = () => {
+        if (input === "") {
+            setResult("Error")
+            return;
+        }
+        if (0 / 0) {
+            setResult(NaN)
+        }
+        if (input / 0) {
+            setResult(Infinity);
+        }
         try {
             setResult(eval(input));
         } catch (error) {

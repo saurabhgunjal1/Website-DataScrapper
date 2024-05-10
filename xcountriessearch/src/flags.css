@@ -2,9 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  height: 100vh;
   /* border: 5px solid red; */
   flex-wrap: wrap;
+  position: relative;
+  top: 90px;
 }
 
 .countryCard {
@@ -13,10 +15,13 @@
   align-items: center;
   margin: 10px;
   padding: 10px;
+  /* margin-top: 60px; */
   border: 1px solid rgb(222, 220, 220);
   border-radius: 8px;
   flex-direction: column;
   width: 200px;
+
+  /* position: absolute; */
 }
 
 .img {
@@ -31,5 +36,8 @@
   /* position: relative; */
   margin-top: 15px;
   margin-bottom: 15px;
-  /* align-items: center; */
+  position: absolute;
+  top: 10px; /* Align it 15px from the top */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%);
 }

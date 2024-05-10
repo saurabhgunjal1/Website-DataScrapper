@@ -33,20 +33,25 @@ export default function Flags() {
 
 
     return (
-        <div className="maindiv">
-
+        <div>
             <input type="text" className="input" onChange={handleInputChange} placeholder="Search for countries" />
 
-            {countries.map((country) => (
-                search.trim() === "" || country.name.common.toLowerCase().includes(search.toLowerCase()) ? (
-                    <Title
-                        key={country.cca3}
-                        flagUrl={country.flags.png}
-                        name={country.name.common}
-                        altflag={country.flags.alt}
-                    />
-                ) : null))
-            }
+
+            <div className="maindiv">
+
+
+                {countries.map((country) => (
+                    search.trim() === "" || country.name.common.toLowerCase().includes(search.toLowerCase()) ? (
+                        <Title
+                            key={country.cca3}
+                            flagUrl={country.flags.png}
+                            name={country.name.common}
+                            altflag={country.flags.alt}
+                        />
+                    ) : null))
+                }
+            </div>
         </div>
+
     );
 }

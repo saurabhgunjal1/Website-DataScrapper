@@ -19,7 +19,7 @@ export default function CompanyDetails() {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:3000/api/v1/data/${id}`
+        `https://website-datascrapper.onrender.com/api/v1/data/${id}`
       );
       setCompanyData(response.data);
       setError(null);

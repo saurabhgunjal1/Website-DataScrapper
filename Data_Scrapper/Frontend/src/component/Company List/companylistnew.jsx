@@ -22,7 +22,9 @@ export default function Companylistnew() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/data");
+        const response = await axios.get(
+          "https://website-datascrapper.onrender.com/api/v1/data"
+        );
         console.log(response.data);
         setCompanies(response.data);
       } catch (error) {
@@ -43,9 +45,12 @@ export default function Companylistnew() {
     const idsToDelete = selectedRowIds.map((rowId) => companies[rowId]._id);
 
     try {
-      await axios.post("http://localhost:3000/api/v1/delete", {
-        ids: idsToDelete,
-      });
+      await axios.post(
+        "https://website-datascrapper.onrender.com/api/v1/delete",
+        {
+          ids: idsToDelete,
+        }
+      );
       setCompanies((prevCompanies) =>
         prevCompanies.filter((item) => !idsToDelete.includes(item._id))
       );

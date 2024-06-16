@@ -9,9 +9,12 @@ export function Header() {
 
   const handleScrap = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/scrap", {
-        url,
-      });
+      const response = await axios.post(
+        "https://website-datascrapper.onrender.com/api/v1/scrap",
+        {
+          url,
+        }
+      );
       console.log("Raw response data:", response.data);
 
       // Extract the scrapedData from the response
